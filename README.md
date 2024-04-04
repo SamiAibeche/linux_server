@@ -113,5 +113,16 @@ Set up a cron job to back up configuration files weekly.
 * Edit the crontab with sudo crontab -e.
 * Add a line for the backup script, e.g., 0 3 * * 0 /path/to/backup_script.sh, to run it weekly.
 
+### You can check below if each of the services (DHCP, DNS, Apache, MariaDB, and SSH) is running properly on a Linux system.
+ 
+```
+sudo systemctl status isc-dhcp-server
+sudo systemctl status bind9
+sudo systemctl status apache2
+sudo systemctl status httpd
+sudo systemctl status mariadb
+sudo systemctl status mysql
+sudo systemctl status ssh
+```
 Conclusion
 This server setup provides a solid foundation for managing network services and hosting internal resources. Regular backups ensure configuration persistence and disaster recovery capability
