@@ -14,6 +14,17 @@ This document provides a comprehensive guide on setting up a Linux server withou
 - [Weekly Backup Configuration](#weekly-backup-configuration)
 - [Conclusion](#conclusion)
 
+## Environment setup
+
+
+For the project, we've set up two virtual machines (VMs) to create a controlled and isolated environment:
+
+__Client VM__ running Kali Linux: Chosen for its comprehensive suite of security and penetration testing tools, allowing us to assess and ensure the security of our server setup.
+
+__Server VM__ running Ubuntu: Hosts our core services including DHCP, DNS, Apache with MariaDB, and GLPI, providing a stable and widely-used platform for server-side configurations.
+
+![](./assets/setup.png)
+
 ## DHCP Server Configuration
 
 ### Installation
@@ -42,6 +53,10 @@ __Service Management:__ Start and enable the DHCP service.
 sudo systemctl start isc-dhcp-server
 sudo systemctl enable isc-dhcp-server
 ```
+
+
+![](./assets/RUN_DHCP.png)
+
 
 ## DNS Server Configuration
 
@@ -74,6 +89,8 @@ sudo systemctl start bind9
 sudo systemctl enable bind9
 ```
 
+![](./assets/RUN_BIND.png)
+
 ## Web Server and MariaDB Setup
 
 ### Apache Installation
@@ -82,11 +99,15 @@ sudo systemctl enable bind9
 sudo apt-get install apache2
 ```
 
+![](./assets/APACHE.png)
+
 ### MariaDB Installation
 
 ```bazaar
 sudo apt-get install mariadb-server
 ```
+![](./assets/RUN_MARIA.png)
+
 
 ## GLPI Setup
 
@@ -94,11 +115,14 @@ sudo apt-get install mariadb-server
 * Create a MariaDB database for GLPI.
 * Access http://192.168.64.6/glpi to run the web installer.
 
+![](./assets/GLPI.png)
 
 ## Remote Management via SSH
 * Ensure SSH is installed (openssh-server package).
 * Edit /etc/ssh/sshd_config for any specific configurations.
 * Restart SSH service to apply changes.
+
+![](./assets/SSH.png)
 
 ## Additional Software
 
