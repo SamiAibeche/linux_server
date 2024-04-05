@@ -135,7 +135,13 @@ sudo apt-get install mariadb-server
 Set up a cron job to back up configuration files weekly.
 
 * Edit the crontab with sudo crontab -e.
+
+![](./assets/CRON.png)
+
 * Add a line for the backup script, e.g., 0 3 * * 0 /path/to/backup_script.sh, to run it weekly.
+
+![](./assets/BACKUP.png)
+
 
 ### You can check below if each of the services (DHCP, DNS, Apache, MariaDB, and SSH) is running properly on a Linux system.
  
